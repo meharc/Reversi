@@ -64,16 +64,14 @@ def NorthEast(i, j, board, turn):
     if (board[i - 1][j + 1] == 0 or board[i - 1][j + 1] == turn):
         return
     else:
-        k1=i-2
-        k2=j+2
-        while(k1 > -1 and k2 < 8):
-             	if (board[k1][k2] == 0):
+        k1,k2 = i-2,j+2
+        while k1>-1 and k2<8:
+                if (board[k1][k2] == 0):
                     return [k1, k2]
                 elif (board[k1][k2] == turn):
                     return
                 else:
-                    k1-=1
-                    k2+=1
+                    k1,k2 = k1-1,k2+1
                     continue
         return
 
@@ -82,34 +80,30 @@ def SouthEast(i, j, board, turn):
     if (board[i + 1][j + 1] == 0 or board[i + 1][j + 1] == turn):
         return
     else:
-        k1=i+2
-        k2=j+2
-        while(k1 < 8 and k2 < 8):
-             	if (board[k1][k2] == 0):
-                    return [k1, k2]
-                elif (board[k1][k2] == turn):
-                    return
-                else:
-                    k1+=1
-                    k2+=1
-                    continue
+        k1, k2 = i + 2, j + 2
+        while k1 < 8 and k2 < 8:
+            if (board[k1][k2] == 0):
+                return [k1, k2]
+            elif (board[k1][k2] == turn):
+                return
+            else:
+                k1, k2 = k1 + 1, k2 + 1
+                continue
         return
 
 def SouthWest(i, j, board, turn):
     if (board[i + 1][j - 1] == 0 or board[i + 1][j - 1] == turn):
         return
     else:
-        k1=i+2
-        k2=j-2
-        while(k1 < 8 and k2 > -1):
-             	if (board[k1][k2] == 0):
-                    return [k1, k2]
-                elif (board[k1][k2] == turn):
-                    return
-                else:
-                    k1+=1
-                    k2-=1
-                    continue
+        k1, k2 = i + 2, j - 2
+        while k1 < 8 and k2 > -1:
+            if (board[k1][k2] == 0):
+                return [k1, k2]
+            elif (board[k1][k2] == turn):
+                return
+            else:
+                k1, k2 = k1 + 1, k2 - 1
+                continue
         return
 
 
@@ -117,17 +111,15 @@ def NorthWest(i, j, board, turn):
     if (board[i - 1][j - 1] == 0 or board[i - 1][j - 1] == turn):
         return
     else:
-        k1=i-2
-        k2=j-2
-        while(k1 > -1 and k2 > -1):
-             	if (board[k1][k2] == 0):
-                    return [k1, k2]
-                elif (board[k1][k2] == turn):
-                    return
-                else:
-                    k1-=1
-                    k2-=1
-                    continue
+        k1, k2 = i - 2, j - 2
+        while k1 > -1 and k2 > -1:
+            if (board[k1][k2] == 0):
+                return [k1, k2]
+            elif (board[k1][k2] == turn):
+                return
+            else:
+                k1, k2 = k1 - 1, k2 - 1
+                continue
         return
 
 def opp(x):
